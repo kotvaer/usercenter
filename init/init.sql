@@ -24,3 +24,7 @@ CREATE TABLE IF NOT EXISTS `user`
 ) COMMENT ='用户表' ENGINE = InnoDB
                     DEFAULT CHARSET = utf8mb4;
 
+-- Initial data for user table
+INSERT INTO `user` (`name`, `gender`, `phone`, `email`, `address`, `is_deleted`) VALUES
+('admin', 1, '13800000000', 'admin@example.com', 'Admin Address', 0),
+('testuser', 0, '13911111111', 'test@example.com', 'Test User Address', 0);
