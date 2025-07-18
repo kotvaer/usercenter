@@ -3,6 +3,7 @@ package org.example.usercenter.controller;
 import org.example.usercenter.model.domain.User;
 import org.example.usercenter.service.UserService;
 import org.example.usercenter.vo.Result;
+import org.example.usercenter.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,7 +35,7 @@ public class UserController {
      * @return
      */
     @GetMapping("/id")
-    public Result<User> searchUserById(Long id) {
+    public Result<UserVO> searchUserById(Long id) {
         return userService.getById(id);
     }
 
@@ -50,7 +51,7 @@ public class UserController {
      * @return
      */
     @GetMapping("/list")
-    public Result<List<User>> listUsers() {
+    public Result<List<UserVO>> listUsers() {
         return userService.list();
     }
 
@@ -60,7 +61,7 @@ public class UserController {
      * @return
      */
     @GetMapping("/name")
-    public Result<User> searchUserByName(String name) {
+    public Result<UserVO> searchUserByName(String name) {
         return userService.getByName(name);
     }
 
@@ -70,7 +71,7 @@ public class UserController {
      * @return
      */
     @GetMapping("/phone")
-    public Result<User> searchUserByPhone(String phone) {
+    public Result<UserVO> searchUserByPhone(String phone) {
         return userService.getByPhone(phone);
     }
 

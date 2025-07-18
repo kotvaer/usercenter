@@ -3,9 +3,13 @@ package org.example.usercenter.service.impl;
 import org.example.usercenter.model.domain.User;
 import org.example.usercenter.service.UserService;
 import org.example.usercenter.mapper.UserMapper;
+import org.example.usercenter.mapper.UserVoMapper;
 import org.example.usercenter.vo.Result;
+import org.example.usercenter.vo.UserVO;
 import org.springframework.stereotype.Service;
 import jakarta.annotation.Resource;
+
+import java.util.stream.Collectors;
 
 import java.util.List;
 
@@ -35,18 +39,24 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Result<User> getById(Long id) {
-        return Result.success(userMapper.selectById(id));
+    public Result<UserVO> getById(Long id) {
+        User user = userMapper.selectById(id);
+        return Result.success(UserVoMapper.INSTANCE.toUserVO(user));
     }
 
     @Override
-    public Result<List<User>> list() {
-        return Result.success(userMapper.selectAll());
+    public Result<List<UserVO>> list() {
+        List<User> users = userMapper.selectAll();
+        List<UserVO> userVOs = users.stream()
+                .map(UserVoMapper.INSTANCE::toUserVO)
+                .collect(Collectors.toList());
+        return Result.success(userVOs);
     }
 
     @Override
-    public Result<User> getByName(String name) {
-        return Result.success(userMapper.selectByName(name));
+    public Result<UserVO> getByName(String name) {
+        User user = userMapper.selectByName(name);
+        return Result.success(UserVoMapper.INSTANCE.toUserVO(user));
     }
 
 
@@ -61,8 +71,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Result<User> getByPhone(String phone) {
-        return Result.success(userMapper.selectByPhone(phone));
+    public Result<UserVO> getByPhone(String phone) {
+        User user = userMapper.selectByPhone(phone);
+        return Result.success(UserVoMapper.INSTANCE.toUserVO(user));
     }
 
 

@@ -2,6 +2,7 @@ package org.example.usercenter.service;
 
 import org.example.usercenter.model.domain.User;
 import org.example.usercenter.vo.Result;
+import org.example.usercenter.vo.UserVO;
 
 import java.util.List;
 
@@ -24,20 +25,20 @@ public interface UserService {
      * @param id 用户ID
      * @return 用户对象
      */
-    Result<User> getById(Long id);
+    Result<UserVO> getById(Long id);
 
     /**
      * 获取所有用户
      * @return 用户列表
      */
-    Result<List<User>> list();
+    Result<List<UserVO>> list();
 
     /**
      * 根据用户名获取用户
      * @param name 用户名
      * @return 用户对象
      */
-    Result<User> getByName(String name);
+    Result<UserVO> getByName(String name);
 
     /**
      * 更新用户
@@ -54,7 +55,7 @@ public interface UserService {
      */
     Result<Boolean> removeById(Long id);
 
-    Result<User> getByPhone(String phone);
+    Result<UserVO> getByPhone(String phone);
 
     Result<Integer> count();
 }
