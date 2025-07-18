@@ -1,7 +1,7 @@
 package org.example.usercenter.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.example.usercenter.model.domain.User;
+import org.example.usercenter.model.dao.User;
 import java.util.List;
 
 /**

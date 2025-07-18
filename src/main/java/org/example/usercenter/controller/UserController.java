@@ -1,9 +1,9 @@
 package org.example.usercenter.controller;
 
-import org.example.usercenter.model.domain.User;
+import org.example.usercenter.model.dao.User;
 import org.example.usercenter.service.UserService;
-import org.example.usercenter.vo.Result;
-import org.example.usercenter.vo.UserVO;
+import org.example.usercenter.model.vo.Result;
+import org.example.usercenter.model.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

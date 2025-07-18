@@ -1,8 +1,8 @@
 package org.example.usercenter.service;
 
-import org.example.usercenter.model.domain.User;
-import org.example.usercenter.vo.Result;
-import org.example.usercenter.vo.UserVO;
+import org.example.usercenter.model.dao.User;
+import org.example.usercenter.model.vo.Result;
+import org.example.usercenter.model.vo.UserVO;
 
 import java.util.List;
 

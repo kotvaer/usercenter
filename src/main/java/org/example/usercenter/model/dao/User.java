@@ -1,4 +1,4 @@
-package org.example.usercenter.model.domain;
+package org.example.usercenter.model.dao;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -1,7 +1,7 @@
 package org.example.usercenter.mapper;
 
-import org.example.usercenter.model.domain.User;
-import org.example.usercenter.vo.UserVO;
+import org.example.usercenter.model.dao.User;
+import org.example.usercenter.model.vo.UserVO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

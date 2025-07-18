@@ -1,8 +1,6 @@
-package org.example.usercenter.vo;
+package org.example.usercenter.model.vo;
 
 import lombok.Data;
-
-import java.time.LocalDateTime;
 
 @Data
 public class UserVO {
