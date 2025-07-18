@@ -5,9 +5,15 @@ import org.example.usercenter.model.vo.UserVO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
-public interface UserVoMapper {
-    UserVoMapper INSTANCE = Mappers.getMapper(UserVoMapper.class);
+public interface UserVOMapper {
+    UserVOMapper INSTANCE = Mappers.getMapper(UserVOMapper.class);
 
     UserVO toUserVO(User user);
+
+    List<UserVO> toUserVOList(List<User> users);
+
+    List<User> toUserList(List<UserVO> userVOs);
 }
