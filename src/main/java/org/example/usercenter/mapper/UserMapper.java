@@ -2,7 +2,7 @@ package org.example.usercenter.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.example.usercenter.model.domain.User;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import java.util.List;
 
 /**
  * @author lanran
@@ -11,6 +11,21 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @Entity org.example.usercenter.model.domain.User
  */
 @Mapper
-public interface UserMapper extends BaseMapper<User> {
+public interface UserMapper {
 
+    User selectById(Long id);
+
+    List<User> selectAll();
+
+    int insert(User user);
+
+    int updateById(User user);
+
+    int deleteById(Long id);
+
+    User selectByName(String name);
+
+    User selectByPhone(String phone);
+
+    Integer count();
 }
