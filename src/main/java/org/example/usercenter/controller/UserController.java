@@ -25,8 +25,7 @@ public class UserController {
      */
     @PostMapping("/register")
     public Result<Boolean> userRegister(@RequestBody User user) {
-        boolean saved = userService.save(user);
-        return Result.success(saved);
+        return userService.save(user);
     }
 
     /**
@@ -36,14 +35,13 @@ public class UserController {
      */
     @GetMapping("/id")
     public Result<User> searchUserById(Long id) {
-        User user = userService.getById(id);
-        return Result.success(user);
+        return userService.getById(id);
     }
 
 
     @GetMapping("/count")
     public Result<Integer> count(){
-        return Result.success(userService.count());
+        return userService.count();
     }
 
 
@@ -53,8 +51,7 @@ public class UserController {
      */
     @GetMapping("/list")
     public Result<List<User>> listUsers() {
-        List<User> list = userService.list();
-        return Result.success(list);
+        return userService.list();
     }
 
     /**
@@ -64,8 +61,7 @@ public class UserController {
      */
     @GetMapping("/name")
     public Result<User> searchUserByName(String name) {
-        User user = userService.getByName(name);
-        return Result.success(user);
+        return userService.getByName(name);
     }
 
     /**
@@ -75,8 +71,7 @@ public class UserController {
      */
     @GetMapping("/phone")
     public Result<User> searchUserByPhone(String phone) {
-        User user = userService.getByPhone(phone);
-        return Result.success(user);
+        return userService.getByPhone(phone);
     }
 
     /**
@@ -86,8 +81,7 @@ public class UserController {
      */
     @PutMapping("/update")
     public Result<Boolean> updateUser(@RequestBody User user) {
-        boolean updated = userService.updateById(user);
-        return Result.success(updated);
+        return userService.updateById(user);
     }
 
     /**
@@ -97,7 +91,6 @@ public class UserController {
      */
     @DeleteMapping("/delete")
     public Result<Boolean> deleteUser(Long id) {
-        boolean removed = userService.removeById(id);
-        return Result.success(removed);
+        return userService.removeById(id);
     }
 }
