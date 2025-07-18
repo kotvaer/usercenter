@@ -4,3 +4,8 @@ spring:
     url: jdbc:mysql://localhost:3306/use_center?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: password
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true

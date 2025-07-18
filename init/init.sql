@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `user`
     `id`          BIGINT AUTO_INCREMENT COMMENT '主键ID',
     `name`        VARCHAR(64) NOT NULL COMMENT '用户名',
     `gender`      TINYINT  DEFAULT 0 COMMENT '性别(0未知 1男 2女)',
-    `phone`       VARCHAR(20) COMMENT '手机号',
+    `phone`       VARCHAR(20)  NOT NULL COMMENT '手机号',
     `email`       VARCHAR(255) UNIQUE COMMENT '邮箱',
     `address`     VARCHAR(255) COMMENT '地址',
     `is_deleted`  TINYINT  DEFAULT 0 COMMENT '是否删除(0正常 1删除)',
